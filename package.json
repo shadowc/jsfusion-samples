@@ -1,0 +1,21 @@
+{
+  "name": "jsfusion-samples",
+  "version": "1.0.0",
+  "description": "A set of html examples for jsfusion library for ease of human testing",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "./node_modules/.bin/webpack",
+    "build:watch": "./node_modules/.bin/webpack --watch"
+  },
+  "author": {
+    "name": "Matias José",
+    "email": "info@matiasjose.com",
+    "url": "https://github.com/shadowc/jsfusion-samples"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "jsfusion": "git@github.com/shadowc/jsfusion.git",
+    "webpack": "^5.68.0",
+    "webpack-cli": "^4.9.2"
+  }
+}
