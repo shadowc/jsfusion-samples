@@ -30,12 +30,33 @@ export default class Counter extends Component {
         this.todoListItems.forEach((item, index) => {
             innerHTML += `
                 <li class="list-group-item">
-                    <input id="item-${index}" type="checkbox" ${item.checked ? 'checked' : ''}>
+                    <input id="item-${index}" type="checkbox" ${item.checked ? 'checked' : ''} data-on="click:todoList.checkItem">
                     <label for="item-${index}">${item.label}</label>
+                    <a href="#" title="Delte Item" data-on="click:todoList.deleteItem" data-item-index="${index}">X</a>
                 </li>
             `;
         });
 
         this.refs.todos.innerHTML = innerHTML;
+    }
+
+    /**
+     * @param {MouseEvent} event
+     */
+    checkItem(event) {
+        const index = Number(event.target.id.split('-')[1]);
+
+        this.todoListItems[index].checked = event.target.checked;
+    }
+
+    /**
+     * @param {MouseEvent} event
+     */
+    deleteItem(event) {
+        const index = Number(event.target.dataset.itemIndex);
+
+        this.todoListItems.splice(index, 1);
+
+        this.renderTodoListItems();
     }
 }
