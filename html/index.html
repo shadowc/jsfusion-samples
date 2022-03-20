@@ -8,14 +8,24 @@
     </head>
 
     <body>
-        <div class="m-3">
-            <h1>Hello!</h1>
+        <div class="container-fluid m-0">
+            <header class="mb-2 p-2 bg-light shadow-light">
+                <h1>JsFusion Powered Sample Widgets</h1>
+            </header>
 
-            <div data-component="counter" data-props='{ "count": 0 }'>
-                <span data-bind="text:counter.count"></span>
+            <article class="mt-2">
+                <div class="card"  style="width: 250px;">
+                    <div class="card-body" data-component="counter" data-props='{ "count": 0 }'>
+                        <h4 class="card-title">Hello!</h4>
 
-                <button data-on="click:counter.increment">Increment!</button>
-            </div>
+                        <p class="card-text">Here's a counter. Click on the button to increment the counter!</p>
+
+                        <p class="card-text">The current number is: <span class="fw-bold" data-bind="text:counter.count"></span></p>
+
+                        <button class="btn btn-primary" data-on="click:counter.increment">Increment!</button>
+                    </div>
+                </div>
+            </article>
         </div>
     </body>
 </html>
