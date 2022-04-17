@@ -32,7 +32,7 @@ export default class Counter extends Component {
                 <li class="list-group-item">
                     <input id="item-${index}" type="checkbox" ${item.checked ? 'checked' : ''} data-on="click:todoList.checkItem">
                     <label for="item-${index}">${item.label}</label>
-                    <a href="#" title="Delte Item" data-on="click:todoList.deleteItem" data-item-index="${index}">X</a>
+                    <a href="#" class="btn btn-sm btn-danger" title="Delete Item" data-on="click:todoList.deleteItem" data-item-index="${index}">X</a>
                 </li>
             `;
         });
@@ -47,6 +47,8 @@ export default class Counter extends Component {
         const index = Number(event.target.id.split('-')[1]);
 
         this.todoListItems[index].checked = event.target.checked;
+
+        console.log(this.todoListItems);
     }
 
     /**
